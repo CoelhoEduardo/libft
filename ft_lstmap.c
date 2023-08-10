@@ -1,38 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecoelho- <ecoelho-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/28 20:49:57 by ecoelho-          #+#    #+#             */
-/*   Updated: 2023/08/10 12:29:55 by ecoelho-         ###   ########.fr       */
+/*   Created: 2023/08/09 16:13:35 by ecoelho-          #+#    #+#             */
+/*   Updated: 2023/08/09 18:08:43 by ecoelho-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	int	sign;
-	int	base;
-	int	i;
+	t_list	*new_lst;
+	t_list	*element;
 
-	sign = 1;
-	base = 0;
-	i = 0;
-	while ((nptr[i] >= '\t' && nptr[i] <= '\r') || nptr[i] == ' ')
+	new_lst = NULL;
+	if (lst == NULL)
 	{
-		i++;
+		return (NULL);
 	}
-	if (nptr[i] == '-' || nptr[i] == '+')
+	while (lst)
 	{
-		sign = 1 - 2 * (nptr[i++] == '-');
+		element = ft_lstnew((*f)(lst->content));
+		if (!element)
+		{
+			if (new_lst == NULL)
+			{
+				return (NULL);
+			}
+			ft_lstclear(&element, (*del));
+			return (NULL);
+		}
+		ft_lstadd_back(&new_lst, element);
+		lst = lst->next;
 	}
-	while (nptr[i] >= '0' && nptr[i] <= '9')
-	{
-		base = base * 10 + (nptr[i] - '0');
-		i++;
-	}
-	return (sign * base);
+	return (new_lst);
 }

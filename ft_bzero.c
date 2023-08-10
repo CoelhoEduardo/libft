@@ -6,7 +6,7 @@
 /*   By: ecoelho- <ecoelho-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 18:34:52 by ecoelho-          #+#    #+#             */
-/*   Updated: 2023/08/02 19:58:05 by ecoelho-         ###   ########.fr       */
+/*   Updated: 2023/08/10 18:04:57 by ecoelho-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,11 @@
 void	ft_bzero(void *s, size_t n)
 {
 	char	*str;
-	int		i;
 
 	str = (char *)s;
-	i = 0;
-	if (n == 0)
+	while (n)
 	{
-		return ;
-	}
-	while (i < (int)n)
-	{
-		str[i] = 0;
-		i++;
+		*str++ = 0;
+		n--;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: ecoelho- <ecoelho-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 18:46:03 by ecoelho-          #+#    #+#             */
-/*   Updated: 2023/08/03 19:23:52 by ecoelho-         ###   ########.fr       */
+/*   Updated: 2023/08/09 18:46:25 by ecoelho-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	}
 	if (nmemb == 0 || size == 0)
 	{
-		nmemb = 1;
-		size = 1;
+		return (malloc(0));
 	}
 	pointer = malloc(nmemb * size);
 	if (pointer == NULL)

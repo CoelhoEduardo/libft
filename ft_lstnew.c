@@ -1,38 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecoelho- <ecoelho-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/28 20:49:57 by ecoelho-          #+#    #+#             */
-/*   Updated: 2023/08/10 12:29:55 by ecoelho-         ###   ########.fr       */
+/*   Created: 2023/08/04 19:47:03 by ecoelho-          #+#    #+#             */
+/*   Updated: 2023/08/04 19:52:00 by ecoelho-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+t_list	*ft_lstnew(void *content)
 {
-	int	sign;
-	int	base;
-	int	i;
+	t_list	*new_ls;
 
-	sign = 1;
-	base = 0;
-	i = 0;
-	while ((nptr[i] >= '\t' && nptr[i] <= '\r') || nptr[i] == ' ')
+	new_ls = malloc(1 * sizeof(t_list));
+	if (!new_ls)
 	{
-		i++;
+		return (NULL);
 	}
-	if (nptr[i] == '-' || nptr[i] == '+')
-	{
-		sign = 1 - 2 * (nptr[i++] == '-');
-	}
-	while (nptr[i] >= '0' && nptr[i] <= '9')
-	{
-		base = base * 10 + (nptr[i] - '0');
-		i++;
-	}
-	return (sign * base);
+	new_ls->content = content;
+	new_ls->next = NULL;
+	return (new_ls);
 }

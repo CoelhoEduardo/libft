@@ -6,7 +6,7 @@
 /*   By: ecoelho- <ecoelho-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 18:37:28 by ecoelho-          #+#    #+#             */
-/*   Updated: 2023/08/02 20:14:57 by ecoelho-         ###   ########.fr       */
+/*   Updated: 2023/08/10 18:48:06 by ecoelho-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	size_t	i;
 
 	if (!src && !dest)
-	{
 		return (0);
-	}
 	i = 0;
 	destiny = (char *)dest;
 	source = (char *)src;

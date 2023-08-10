@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecoelho- <ecoelho-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/28 20:49:57 by ecoelho-          #+#    #+#             */
-/*   Updated: 2023/08/10 12:29:55 by ecoelho-         ###   ########.fr       */
+/*   Created: 2023/08/09 10:34:18 by ecoelho-          #+#    #+#             */
+/*   Updated: 2023/08/09 10:44:58 by ecoelho-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+t_list	*ft_lstlast(t_list *lst)
 {
-	int	sign;
-	int	base;
-	int	i;
+	t_list	*new_lst;
 
-	sign = 1;
-	base = 0;
-	i = 0;
-	while ((nptr[i] >= '\t' && nptr[i] <= '\r') || nptr[i] == ' ')
+	new_lst = lst;
+	if (new_lst == NULL)
 	{
-		i++;
+		return (NULL);
 	}
-	if (nptr[i] == '-' || nptr[i] == '+')
+	while (new_lst->next)
 	{
-		sign = 1 - 2 * (nptr[i++] == '-');
+		new_lst = new_lst->next;
 	}
-	while (nptr[i] >= '0' && nptr[i] <= '9')
-	{
-		base = base * 10 + (nptr[i] - '0');
-		i++;
-	}
-	return (sign * base);
+	return (new_lst);
 }

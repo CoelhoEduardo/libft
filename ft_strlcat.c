@@ -6,7 +6,7 @@
 /*   By: ecoelho- <ecoelho-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 17:47:23 by ecoelho-          #+#    #+#             */
-/*   Updated: 2023/08/02 21:05:15 by ecoelho-         ###   ########.fr       */
+/*   Updated: 2023/08/04 19:51:14 by ecoelho-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,15 @@
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	unsigned int	len;
+	int				len;
 	unsigned int	dest_len;
 	unsigned int	total_len;
 
-	total_len = ft_strlen(dest) + ft_strlen(src);
-	dest_len = ft_strlen(dest);
+	if (dest != 0)
+		dest_len = ft_strlen(dest);
+	else
+		dest_len = 0;
+	total_len = dest_len + ft_strlen(src);
 	len = 0;
 	if (size > dest_len)
 	{

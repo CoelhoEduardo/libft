@@ -6,7 +6,7 @@
 /*   By: ecoelho- <ecoelho-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 17:23:41 by ecoelho-          #+#    #+#             */
-/*   Updated: 2023/08/03 18:37:19 by ecoelho-         ###   ########.fr       */
+/*   Updated: 2023/08/09 18:15:33 by ecoelho-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	size_t	len;
 
 	len = 0;
-	if (src == 0)
+	if (size <= 0)
 	{
-		return (0);
+		return (ft_strlen(src));
 	}
 	if (size > 0)
 	{
