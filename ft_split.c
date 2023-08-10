@@ -6,7 +6,7 @@
 /*   By: ecoelho- <ecoelho-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 20:13:32 by ecoelho-          #+#    #+#             */
-/*   Updated: 2023/08/10 19:18:43 by ecoelho-         ###   ########.fr       */
+/*   Updated: 2023/08/10 19:19:53 by ecoelho-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ static void	ft_allocate(char **tab, char const *s, char sep)
 	{
 		while (*s == sep)
 			++s;
-		    tmp = s;
+		tmp = s;
 		while (*tmp && *tmp != sep)
 			++tmp;
 		if (*tmp == sep || tmp > s)
@@ -91,19 +91,6 @@ static int	ft_count_words(char const *s, char sep)
 
 char	**ft_split(char const *s, char c)
 {
-<<<<<<< HEAD
-	char	**new;
-	int		size;
-
-	if (!s)
-		return (NULL);
-	size = ft_count_words(s, c);
-	new = (char **)malloc(sizeof(char *) * (size + 1));
-	if (!new)
-		return (NULL);
-	ft_allocate(new, s, c);
-	return (new);
-=======
 	size_t	i;
 	size_t	j;
 	char	**ret;
@@ -128,5 +115,4 @@ char	**ft_split(char const *s, char c)
 			s++;
 	}
 	return (ret);
->>>>>>> updte files and complete libft
 }
