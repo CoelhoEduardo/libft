@@ -6,7 +6,7 @@
 /*   By: ecoelho- <ecoelho-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 18:45:06 by ecoelho-          #+#    #+#             */
-/*   Updated: 2023/08/02 19:14:25 by ecoelho-         ###   ########.fr       */
+/*   Updated: 2023/08/11 14:27:49 by ecoelho-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		{
 			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 		}
-		--n;
+		n--;
 		i++;
 	}
 	return (0);

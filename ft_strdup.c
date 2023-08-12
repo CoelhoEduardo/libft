@@ -6,7 +6,7 @@
 /*   By: ecoelho- <ecoelho-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 18:49:11 by ecoelho-          #+#    #+#             */
-/*   Updated: 2023/08/02 21:29:36 by ecoelho-         ###   ########.fr       */
+/*   Updated: 2023/08/11 18:21:17 by ecoelho-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,14 @@
 
 char	*ft_strdup(const char *s)
 {
-	unsigned int	len;
-	char			*copy;
+	size_t	len;
+	char	*copy;
 
 	len = ft_strlen(s) + 1;
 	copy = malloc((unsigned int)len);
-	if (!copy)
+	if (copy != NULL)
 	{
-		return (0);
+		ft_strlcpy(copy, s, len);
 	}
-	ft_memcpy(copy, s, len);
 	return (copy);
 }

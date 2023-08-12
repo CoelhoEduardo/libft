@@ -6,7 +6,7 @@
 /*   By: ecoelho- <ecoelho-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 17:45:56 by ecoelho-          #+#    #+#             */
-/*   Updated: 2023/08/03 17:51:14 by ecoelho-         ###   ########.fr       */
+/*   Updated: 2023/08/11 13:37:54 by ecoelho-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	unsigned char	x;
+	unsigned char	to_found;
 
-	x = (unsigned char)c;
-	while (*s && *s != x)
+	to_found = (unsigned char)c;
+	while (*s && *s != to_found)
 	{
 		s++;
 	}
-	if (*s == x)
+	if (*s == to_found)
 	{
 		return ((char *)s);
 	}
