@@ -6,7 +6,7 @@
 /*   By: ecoelho- <ecoelho-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 18:11:25 by ecoelho-          #+#    #+#             */
-/*   Updated: 2023/08/04 19:12:31 by ecoelho-         ###   ########.fr       */
+/*   Updated: 2023/08/15 09:43:39 by ecoelho-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void	ft_putendl_fd(char *s, int fd)
 	i = 0;
 	while (s[i] != '\0')
 	{
-		ft_putchar_fd(s[i], fd);
+		write(fd, &s[i], 1);
 		i++;
 	}
-	ft_putchar_fd('\n', fd);
+	write(fd, "\n", 1);
 }
