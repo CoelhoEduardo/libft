@@ -1,6 +1,6 @@
 <h1>Libft</h1>
 
-![Screenshot from 2023-06-06 10-48-37](https://github.com/CoelhoEduardo/libft/assets/76714413/c7dc8fb3-0515-4c67-b2b9-fd14fd270444)  
+![Libft badge](https://github.com/CoelhoEduardo/libft/assets/76714413/4cc5ccdf-8fa2-48d8-8749-6f83a4fc53f9)
 
 My first project as 42 student, to learn more about libc and create my own.
 I learn about pointers, memory allocation, struct and linked list;
