@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ecoelho- <ecoelho-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eduardocoelho <eduardocoelho@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 20:13:32 by ecoelho-          #+#    #+#             */
-/*   Updated: 2023/08/11 14:15:36 by ecoelho-         ###   ########.fr       */
+/*   Updated: 2024/01/04 01:36:08 by eduardocoel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,21 @@ static size_t	ft_getwords(char const *s, char c)
 
 	wrd = 0;
 	i = 0;
-	while (*s)
+	while (s[i])
 	{
-		if (*s != c && !i)
+		if (s[i] != c)
 		{
-			i = 1;
 			wrd++;
+            while (s[i] != c && s[i])
+            {
+                i++;
+            }
 		}
-		else if (*s == c)
-		{
-			i = 0;
-		}
-		s++;
+        else
+        {
+            i++;
+        }
+		
 	}
 	return (wrd);
 }
@@ -65,6 +68,7 @@ char	**ft_split(char const *s, char c)
 		if (*s != c)
 		{
 			ret[j] = ft_substr(s, 0, ft_split_len(s, c));
+			s++;
 			j++;
 		}
 		while (*s != c && *s)

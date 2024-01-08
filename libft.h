@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ecoelho- <ecoelho-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eduardocoelho <eduardocoelho@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 19:00:13 by ecoelho-          #+#    #+#             */
-/*   Updated: 2023/08/09 16:40:26 by ecoelho-         ###   ########.fr       */
+/*   Updated: 2023/11/26 19:52:08 by eduardocoel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,11 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+
+char	*get_next_line(int fd);
 
 #endif
